@@ -62,5 +62,5 @@ for (let i=0; i<result.length; i+=1) {
     print(output);
 }
 
-Quit(0);
+quit(0);
 
