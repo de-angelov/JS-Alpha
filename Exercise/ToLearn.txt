@@ -1,0 +1,12 @@
+Solid principi;
+MurgeSort
+DFS BFS algorithms
+
+worst-case;
+Averge-case;
+Best-case;
+
+kak masivite rabotiqt wutre6no s const stoinost;
+
+garbage collector
+ algoritm complexity;

@@ -1,21 +1,12 @@
-//  console.log(4%4);
-let n =3;
+const getGets = (arr) => {
+    let index = 0;
+    return () => {
+        return arr[index++];
+    };
+};
 
-const matrix = [n].fill(Array.from({
-    length: n,
-}));
+const gets = this.gets || getGets(['@*@*@*xxx', '1 -1 1 -1 2 1 1 1 1 1 1']);
+const print = this.print || console.log;
 
-const matrix2 = [n].fill(Array.from({
-    length: n,
-}));
-
-const matrix3 = Array.from({
-    length: n,
-});
-matrix3.fill(Array.from({
-    length: n,
-}));
-
-console.log(matrix);
-console.log(matrix2);
-console.log(matrix3);
+print(`You are deadlocked, you greedy kitty!
+Jumps before deadlock: 1`);

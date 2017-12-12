@@ -5,7 +5,7 @@ const getGets = (arr) => {
     };
 };
 
-const gets = this.gets || getGets(['6', '30 40 2 300 500 1']); // 4 1 2 3
+const gets = this.gets || getGets(['3', '2 1 3']); // 4 1 2 3
 const print = this.print || console.log;
 
 const swapLastTwo = (inputAr, n) => {
@@ -14,16 +14,21 @@ const swapLastTwo = (inputAr, n) => {
     inputAr[n - 2] = temp;
     return inputAr.join(' ');
 };
-const sliceAndSort = (inputAr, n) => {
+1
+const swapMidle = (inputAr, n) => {
     let max;
     let work;
+    let result;
     for (let i = n - 1; i > 0; i -= 1) {
         if (inputAr[i] > inputAr[i - 1]) {
-            max = inputAr.slice(0, i-1); // change to  arr
-            inputAr=inputAr.splice(i-1, n);
-            inputAr = inputAr.sort();
-            inputAr=max.concat(inputAr);
-            return inputAr.join(' ');
+            max= inputAr[i];
+            work = inputAr.slice(i-1).sort();
+            work.pop();
+            inputAr = inputAr.splice(0, i-1);
+            inputAr.push(max);
+            inputAr=inputAr.concat(work);
+            result=inputAr.join(' ');
+            return result;
         }
     }
     return inputAr.join(' ');
@@ -34,8 +39,7 @@ const getNextPermutation = (inputAr, n) => {
     if (inputAr[n - 1] > inputAr[n - 2]) {
         result = swapLastTwo(inputAr, n);
     } else {
-
-        result = sliceAndSort(inputAr, n);
+        result = swapMidle(inputAr, n);
     }
     return result;
 };
@@ -43,7 +47,7 @@ const getNextPermutation = (inputAr, n) => {
 const n = Number(gets());
 let nArray = gets();
 nArray = nArray.split(' ').map(Number);
-console.log(nArray);
+
 const result = getNextPermutation(nArray, n);
 print(result);
 // quit(0);
